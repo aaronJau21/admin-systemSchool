@@ -6,4 +6,5 @@ export interface IUser {
   mother_lastname: string;
   status: boolean;
   images: null;
+  phone: string;
 }

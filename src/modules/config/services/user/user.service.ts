@@ -11,4 +11,16 @@ export class UserService {
     const { data } = await api.post("/user", user);
     return data;
   }
+
+  public static async updateStatusUser(id: number): Promise<IUser> {
+    const { data } = await api.patch(`/user/${id}/status`);
+    return data;
+  }
+
+  public static async updateUser(
+    id: number,
+    user: Partial<ICreateUserRequest>
+  ): Promise<void> {
+    await api.patch(`/user/${id}`, user);
+  }
 }
