@@ -12,6 +12,7 @@ interface Props {
   currentPage: string;
   secondPage: string;
   ultiPage: string;
+  children?: React.ReactNode;
 }
 
 export const BreadCrumComponent = ({
@@ -19,9 +20,10 @@ export const BreadCrumComponent = ({
   currentPage,
   secondPage,
   ultiPage,
+  children,
 }: Props) => {
   return (
-    <div className="max-w-11/12 mx-auto mb-3">
+    <div className="max-w-11/12 mx-auto mb-3 flex justify-between">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -37,6 +39,7 @@ export const BreadCrumComponent = ({
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+      {children}
     </div>
   );
 };
